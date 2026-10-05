@@ -4,8 +4,18 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        phpactor = false,
-        intelephense = {}, -- enables the server
+        intelephense = {
+          settings = {
+            intelephense = {
+              telemetry = {
+                enabled = false,
+              },
+              files = {
+                maxSize = 5000000,
+              },
+            },
+          },
+        },
       },
     },
   },
